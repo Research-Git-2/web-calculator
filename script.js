@@ -40,6 +40,10 @@ const num3 = () => {
   appendNumber("3");
 };
 
+const num0 = () => {
+  appendNumber("0");
+};
+
 const appendNumber = (num) => {
   if (operator === "") {
     firstNumber += num;
@@ -164,6 +168,9 @@ two.addEventListener("click", num2);
 
 const three = document.querySelector("#three");
 three.addEventListener("click", num3);
+
+const numZero = document.querySelector("#zero");
+numZero.addEventListener("click", num0);
 
 const divide = document.querySelector("#D");
 divide.addEventListener("click", numD);
