@@ -16,12 +16,29 @@ const num3 = () => appendNumber("3");
 const num0 = () => appendNumber("0");
 
 const appendNumber = (num) => {
+  const maxLength = 12;
+
   if (operator === "") {
+    if (firstNumber.length >= maxLength) return;
+
     firstNumber += num;
+    firstNumber = normalizeNumber(firstNumber);
     display.textContent = firstNumber;
   } else {
+    if (secondNumber.length >= maxLength) return;
+
     secondNumber += num;
-    display.textContent = firstNumber + " " + operator + " " + secondNumber;
+    secondNumber = normalizeNumber(secondNumber);
+    display.textContent = `${firstNumber} ${operator} ${secondNumber}`;
+  }
+};
+
+const normalizeNumber = (str) => {
+  if (str.includes(".")) {
+    const [intPart, decPart] = str.split(".");
+    return `${parseInt(intPart, 10)}.${decPart}`;
+  } else {
+    return parseInt(str, 10).toString();
   }
 };
 
