@@ -16,7 +16,7 @@ const num3 = () => appendNumber("3");
 const num0 = () => appendNumber("0");
 
 const appendNumber = (num) => {
-  const maxLength = 12;
+  const maxLength = 16;
 
   if (operator === "") {
     if (firstNumber.length >= maxLength) return;
