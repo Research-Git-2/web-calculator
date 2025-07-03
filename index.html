@@ -7,43 +7,51 @@
     <title>Calculator</title>
   </head>
   <body>
-    <div class="calculator-container">
-      <div class="rectangle">
-        <div class="display">0</div>
-        <div class="buttons" id="exe">
-          <div class="row">
-            <button id="AC">AC</button>
-            <button id="root">&radic;</button>
-            <button id="">%</button>
-            <button id="pow">x²</button>
+    <body>
+      <div class="calculator-container">
+        <div class="layout">
+          <div class="rectangle">
+            <div class="display">0</div>
+            <div class="buttons" id="exe">
+              <div class="row">
+                <button id="AC">AC</button>
+                <button id="root">√</button>
+                <button id="per">%</button>
+                <button id="pow">x²</button>
+              </div>
+              <div class="row">
+                <button id="seven">7</button>
+                <button id="eight">8</button>
+                <button id="nine">9</button>
+                <button id="mult">*</button>
+              </div>
+              <div class="row">
+                <button id="four">4</button>
+                <button id="five">5</button>
+                <button id="six">6</button>
+                <button id="minus">-</button>
+              </div>
+              <div class="row">
+                <button id="one">1</button>
+                <button id="two">2</button>
+                <button id="three">3</button>
+                <button id="plus">+</button>
+              </div>
+              <div class="row">
+                <button id="zero">0</button>
+                <button id="point">.</button>
+                <button id="equal">=</button>
+                <button id="D">/</button>
+              </div>
+            </div>
           </div>
-          <div class="row">
-            <button id="seven">7</button>
-            <button id="eight">8</button>
-            <button id="nine">9</button>
-            <button id="mult">*</button>
-          </div>
-          <div class="row">
-            <button id="four">4</button>
-            <button id="five">5</button>
-            <button id="six">6</button>
-            <button id="minus">-</button>
-          </div>
-          <div class="row">
-            <button id="one">1</button>
-            <button id="two">2</button>
-            <button id="three">3</button>
-            <button id="plus">+</button>
-          </div>
-          <div class="row">
-            <button id="zero">0</button>
-            <button id="point">.</button>
-            <button id="equal">=</button>
-            <button id="D">/</button>
+
+          <div class="history">
+            <h3>История</h3>
+            <ul id="historyList"></ul>
           </div>
         </div>
       </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+      <script src="script.js"></script>
+    </body>
 </html>
