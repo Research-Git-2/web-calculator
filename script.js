@@ -20,13 +20,11 @@ const appendNumber = (num) => {
 
   if (operator === "") {
     if (firstNumber.length >= maxLength) return;
-
     firstNumber += num;
     firstNumber = normalizeNumber(firstNumber);
     display.textContent = firstNumber;
   } else {
     if (secondNumber.length >= maxLength) return;
-
     secondNumber += num;
     secondNumber = normalizeNumber(secondNumber);
     display.textContent = `${firstNumber} ${operator} ${secondNumber}`;
@@ -172,11 +170,31 @@ const reset = () => {
 };
 
 const addToHistory = (expr, result) => {
+  const historyItem = `${expr} = ${result}`;
   const historyList = document.getElementById("historyList");
+
   const li = document.createElement("li");
-  li.textContent = `${expr} = ${result}`;
+  li.textContent = historyItem;
   historyList.prepend(li);
+
+  let history = JSON.parse(localStorage.getItem("calcHistory")) || [];
+  history.unshift(historyItem);
+  history = history.slice(0, 100);
+  localStorage.setItem("calcHistory", JSON.stringify(history));
 };
+
+const loadHistory = () => {
+  const historyList = document.getElementById("historyList");
+  const history = JSON.parse(localStorage.getItem("calcHistory")) || [];
+
+  history.slice(0, 100).forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    historyList.appendChild(li);
+  });
+};
+
+window.addEventListener("DOMContentLoaded", loadHistory);
 
 document.querySelector("#pow").addEventListener("click", pow);
 document.querySelector("#root").addEventListener("click", root);
